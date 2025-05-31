@@ -9,5 +9,7 @@ pub enum Errors {
     #[error("Base64 Decode Error: {0}")]
     Base64DecodeError(#[from] base64::DecodeError),
     #[error("Element is not present in the provided set!")]
-    NotPresent
+    NotPresent,
+    #[error("Image Error: {0}")]
+    ImageError(#[from] image::ImageError),
 }
